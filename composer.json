@@ -1,0 +1,25 @@
+{
+  "name": "paracall/igor",
+  "description": "Paracall Console Application",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Guido Bertolino",
+      "email": "bertog974@gmail.com"
+    }
+  ],
+  "require": {
+    "symfony/console": "2.6.*",
+    "symfony/yaml": "2.6.*",
+    "illuminate/database": "4.2.*"
+  },
+  "require-dev": {
+    "phpspec/phpspec": "2.1.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Paracall\\": "src/Paracall"
+    }
+  }
+}

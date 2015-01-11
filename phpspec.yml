@@ -1,0 +1,6 @@
+suites:
+  igor_suite:
+    namespace: Paracall
+    src_path: src
+    spec_path: spec
+    spec_prefix: spec

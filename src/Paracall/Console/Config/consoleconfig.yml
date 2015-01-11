@@ -1,0 +1,3 @@
+igor:
+  template_path: src/Templates
+  migration_path: app/Database/Migrations
