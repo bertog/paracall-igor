@@ -18,5 +18,5 @@ $app->setBaseDir(__DIR__);
 
 $app->add(new SayHelloCommand());
 $app->add(new MigrateCommand($app->baseDir, $app->getAppNamespace()));
-$app->add(new MigrateMakeCommand());
+$app->add(new MigrateMakeCommand($app->baseDir, $app->getAppNamespace()));
 $app->run();

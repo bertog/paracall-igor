@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Paracall\Database\Migrations;
+namespace $NAMESPACE$\Database\Migrations;
 
 
 use Illuminate\Database\Capsule\Manager;

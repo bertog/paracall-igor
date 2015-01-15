@@ -14,6 +14,16 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class MigrateMakeCommand extends Command {
 
+    protected $baseDir;
+    protected $namespace;
+
+    function __construct($baseDir, $namespace)
+    {
+        $this->baseDir = $baseDir;
+        $this->namespace = $namespace;
+        parent::__construct();
+    }
+
     public function configure()
     {
         $this->setName('migrate:make')
@@ -23,11 +33,11 @@ class MigrateMakeCommand extends Command {
 
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        $data = MigrationParser::parse($input->getArgument('table'));
+        $data = MigrationParser::parse($input->getArgument('table'), $this->namespace);
 
         $generator = new Generator(new FileSystem);
 
-        $generator->make('src/Templates/CreateTableTemplate.txt', $data,  'app/Database/Migrations/' . $data['MIGRATION']);
+        $generator->make($this->baseDir . '/src/Templates/CreateTableTemplate.txt', $data,  'app/Database/Migrations/' . $data['MIGRATION']);
 
         $output->writeln("<info>Migration File " . $data['MIGRATION'] . " Created</info>");
     }
